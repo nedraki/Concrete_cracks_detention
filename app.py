@@ -5,7 +5,7 @@ import time
 import streamlit as st
 
 #st.set_option('deprecation.showfileUploaderEncoding', False)
-st.title("Concrete cracks detectetor")
+st.title("Concrete cracks detector")
 my_placeholder = st.empty()
 my_placeholder.text("Upload an image to evaluate its classification: ")
 
