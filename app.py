@@ -5,7 +5,7 @@ import time
 import streamlit as st
 
 #st.set_option('deprecation.showfileUploaderEncoding', False)
-st.title("TESTING")
+st.title("Concrete cracks detectetor")
 my_placeholder = st.empty()
 my_placeholder.text("Upload an image to evaluate its classification: ")
 
@@ -29,9 +29,8 @@ if uploaded_file is not None:
 
     label = classification(image, 'trained_models/model_fine_tuned_crack_detection.h5')
     if label == 0:
-        st.success('LABEL O')
+        st.warning('Crack detected on image')
         
-        st.balloons()
     else:
-        st.success("LABEL 1")
+        st.success("No, cracks have been detected on image")
         
