@@ -6,7 +6,6 @@ https://share.streamlit.io/nedraki/concrete_cracks_detention/main/app.py
 
 ![test.png]
 
-
 Identification of concrete cracks with the application of deep neural networks.
 
 ### Objective:
