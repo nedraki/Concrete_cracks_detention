@@ -27,12 +27,15 @@ if uploaded_file is not None:
             my_bar.progress(percent_complete + 1)
         time.sleep(0.1)
 
-    label, certainty = classification(image, 'trained_models/model_fine_tuned_crack_detection.h5')
+    label, probability = classification(image, 'trained_models/model_fine_tuned_crack_detection.h5')
+    
     if label == 0:
-    	st.success(f'There is {certainty}% probability that a crack is presented on the image')
-        st.warning('Crack detected on image')
+
+    	st.success(f'There is {round(probability[0][0].numpy())}% chance that a crack is presented on the image')
+    	st.warning('Crack detected on image')
+
     else:
 
-    	st.success(f'There is {certainty}% probability that a crack is presented on the image')
+    	st.success(f'There is {round(probability[0][0].numpy())}% chance that a crack is presented on the image')
     	st.success("No cracks have been detected on image")
         

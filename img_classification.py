@@ -36,13 +36,10 @@ def classification(img, model):
     # Apply a sigmoid since our model returns logits
     
     prediction = tf.nn.sigmoid(prediction)
-    certainty = predictions*100
-    prediction = tf.where(prediction < 0.7, 0, 1)
-    certainty = tf.where(certainty < 70, certainty , certainty )
-
-
-    print('Predictions:\n', prediction)
+    probability = (1- prediction)*100
+    prediction = tf.where(probability > 80, 0, 1)
+    #probability = tf.where(probability < 70, probability , probability )
     
-    return prediction, certainty
+    return prediction, probability
 
 #testing
