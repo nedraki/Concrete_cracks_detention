@@ -38,7 +38,6 @@ def classification(img, model):
     prediction = tf.nn.sigmoid(prediction)
     probability = (1- prediction)*100
     prediction = tf.where(probability > 80, 0, 1)
-    #probability = tf.where(probability < 70, probability , probability )
     
     return prediction, probability
 

@@ -32,10 +32,10 @@ if uploaded_file is not None:
     if label == 0:
 
     	st.success(f'There is {round(probability[0][0].numpy())}% chance that a crack is presented on the image')
-    	st.warning('Crack detected on image')
+
 
     else:
 
     	st.success(f'There is {round(probability[0][0].numpy())}% chance that a crack is presented on the image')
-    	st.success("No cracks have been detected on image")
+
         
