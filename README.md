@@ -1,6 +1,6 @@
 # Concrete crack detention
 
-**Work in progress**
+**Version 0.1**
 
 https://share.streamlit.io/nedraki/concrete_cracks_detention/main/app.py
 
@@ -10,7 +10,7 @@ Identification of concrete cracks in images with the application of convolutiona
 
 ### Objective:
 
-To be able to identify cracks on batch of images taken for concrete inspection in structures.
+To identify cracks on images taken for concrete inspection in structures.
 
 ### About the data:
 
@@ -28,12 +28,12 @@ The current version has been trained with more than 40K images combining the dat
 
 ![](first_metrics.jpg)
 
-In order to improve the accuracy metrics, the following actions were applied to the first trained model:
+**In order to improve the accuracy metrics, the following actions were applied to the first trained model:**
 
 1. Data augmentation techniques: Rotation and zoom on available images
 2. Adding dropout layer: To avoid presence of overfitting
 3. Adjusting learning rate
-3. Transfer leaning: Using mobilenetV2 pre-trained model.
+3. Transfer learning: Using mobilenetV2 pre-trained model.
 
 ![](metrics.jpg)
 
@@ -41,12 +41,15 @@ In order to improve the accuracy metrics, the following actions were applied to 
 
 ![](results_sample.jpg)
 
-### How can the model be improved?
+### How could the model be improved?
 
-- Increase the pixels size of images used for training: The current version is trained reducing the images to 80x80 pixels (Due to limited access to computational power). Higher quality on images might lead to better results
+- Increase the pixels size of images used for training: The current version is trained reducing the images to 80x80 pixels (Due to limited access to computational power). Higher quality on images might lead to better results.
 
-- Improve your dataset: The dataset can be enriched with more data helpful to build a more general version.
+- Improve your dataset: The dataset can be enriched with more data helpful to build a more generic model.
 
-- Tuning Epochs and Batch size and learning rate: After 30 epochs, the training did not report increases on the accuracy for a batch size = 128. However the tuning of this parameters will remain essential to achieved better results and balance the necesary computational resources.
+- Tuning Epochs, Batch size and learning rate: After 30 epochs, the training did not report increases on the accuracy for a batch size = 128. However the tuning of this parameters will remain essential to achieved better results and balance use of computational resources.
 
-- Google collab is a good friend to run this notebook.
+- Evaluate transfer learning with another pre-trained model and its influence in the accuracy.
+
+- Google collab is a good friend to run the training notebook.
+
